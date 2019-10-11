@@ -10,7 +10,12 @@ sls plugin install -n serverless-python-module
 
 ## Usage
 
+This is only effective when packaging individually.
+
 ```
+package:
+  individually: true
+
 functions:
   myFunction:
     handler: function.handler
