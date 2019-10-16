@@ -4,7 +4,7 @@
   "description": "Serverless Python Module Plugin",
   "main": "index.js",
   "dependencies": {
-    "bluebird": "^3.7.0",
+    "bluebird": "^3.7.1",
     "fs-extra": "^8.1.0",
     "jszip": "^3.2.2",
     "lodash.get": "^4.4.2",
