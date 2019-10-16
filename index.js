@@ -7,7 +7,7 @@ const { repackagePythonModules } = require("./lib/repackage");
 
 BbPromise.promisifyAll(fse);
 
-class ServerlessPythonRequirements {
+class ServerlessPythonModule {
   get targetFuncs() {
     let inputOpt = this.serverless.processedInput.options;
     return inputOpt.function
@@ -19,6 +19,7 @@ class ServerlessPythonRequirements {
     this.serverless = serverless;
 
     const repackage = () => {
+      if (!this.serverless.service.package.individually) return;
       return repackagePythonModules.bind(this)();
     };
 
@@ -29,4 +30,4 @@ class ServerlessPythonRequirements {
   }
 }
 
-module.exports = ServerlessPythonRequirements;
+module.exports = ServerlessPythonModule;
