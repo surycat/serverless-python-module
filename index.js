@@ -25,8 +25,15 @@ class ServerlessPythonModule {
 
     this.hooks = {
       "after:package:createDeploymentArtifacts": repackage,
-      "after:deploy:function:packageFunction": repackage
+      "after:deploy:function:packageFunction": repackage,
     };
+
+    serverless.configSchemaHandler.defineFunctionProperties("aws", {
+      type: "object",
+      properties: {
+        module: { type: "string" },
+      },
+    });
   }
 }
 
