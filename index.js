@@ -2,7 +2,6 @@
 
 const BbPromise = require("bluebird");
 const fse = require("fs-extra");
-const values = require("lodash.values");
 const { repackagePythonModules } = require("./lib/repackage");
 
 BbPromise.promisifyAll(fse);
@@ -12,7 +11,7 @@ class ServerlessPythonModule {
     let inputOpt = this.serverless.processedInput.options;
     return inputOpt.function
       ? [inputOpt.functionObj]
-      : values(this.serverless.service.functions);
+      : Object.values(this.serverless.service.functions);
   }
 
   constructor(serverless) {
