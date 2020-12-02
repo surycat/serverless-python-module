@@ -1,6 +1,6 @@
 {
   "name": "serverless-python-module",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Serverless Python Module Plugin",
   "main": "index.js",
   "dependencies": {
