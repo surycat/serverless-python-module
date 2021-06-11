@@ -25,7 +25,7 @@ workflows:
   package-deploy:
     jobs:
       - deploy:
-          context: gemfury-creds
+          context: gemfury-push-creds
           filters:
             branches:
               ignore: /.*/
